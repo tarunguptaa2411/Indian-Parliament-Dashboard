@@ -5,7 +5,7 @@ import pandas as pd
 import re
 from PIL import Image
 from io import BytesIO
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
 
 st.set_page_config(layout="wide")
