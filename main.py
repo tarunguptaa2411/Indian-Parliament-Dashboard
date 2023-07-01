@@ -5,6 +5,7 @@ import pandas as pd
 import re
 from PIL import Image
 from io import BytesIO
+import matplotlib.pyplot as plt
 import numpy as np
 
 st.set_page_config(layout="wide")
@@ -448,22 +449,24 @@ for tr in range(len(rows)):
         # party.append(td.text.strip())
         # seats.append(td[2].text)
     LST.append(lst)
-    print("###################")
-
+    # print("###################")
+# print(LST)
 df = pd.DataFrame(LST)
 df = pd.DataFrame(df.values[1:], columns=df.iloc[0])
 #df=df.drop(['#'], axis=1)
 colum1,colum2 =st.columns([3,1])
 colum2.table(df)
 
-# for i in range(len(df['Seats'])):
-#     if len(df['Seats'][i])==0 :
-#         df['Seats'][i]=0
-#     df['Seats'][i]=float(df['Seats'][i])
+# for i in range(len(df)):
+#     if df['MLA Seats'][i]==0 :
+#         df['MLA Seats'][i]=0
+#     else:
+#         df['MLA Seats'][i]=float(df['MLA Seats'][i])
 #     #type(df['Seats'][1])
-#
+
+
 # labels = df['Party']
-# sizes =  [float(x) for x in df['Seats']]
+# sizes =  [float(x) for x in df['MLA Seats']]
 # #explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 #
 # fig1, ax1 = plt.subplots()
@@ -473,8 +476,8 @@ colum2.table(df)
 #
 # colum2.pyplot(fig1)
 
-
-
+#
+#
 rows2=img[0].find_all('tr')
 LST = []
 for tr in range(len(rows2)):
@@ -493,8 +496,8 @@ df = pd.DataFrame(df.values[1:], columns=df.iloc[0])
 colum1.table(df)
 
 
-
-
+#
+#
 
 rows3=img[2].find_all('tr')
 LST = []
